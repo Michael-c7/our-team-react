@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
-
 export const Cards = (props) => {
     const {cardData, currentCard} = props;
     return (
         <ul className="team-cards">
             {cardData.map((card, index) => {
                 const {id, fullName, image, job, text} = card;
+                /*Could also get the current card (that we want to display) w/
+                    const {id, fullName, image, job, text} = card[currentCard];
+                */
                 if(index === currentCard) {
                     return (
                         <li key={id} className="team-card show-card">
